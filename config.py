@@ -60,35 +60,4 @@ Final Answer:
 
 model_name = "microsoft/Phi-4-mini-instruct"
 
-# ds_prompt = """ 
-# You are an expert ontology and knowledge graph assistant.  
-# You will always follow the reasoning direction shown in the example before giving your final answer.  
 
-# Ontology statement: {text}"  
-# Sentence: {text}  
-
-# Reasoning Direction (follow this structure strictly):  
-# - Identify the class and instance from the ontology statement.  
-# - Expand them into possible keywords, synonyms, or domain-specific variations.  
-# - Scan the text sentence for these terms.  
-# - Decide if the text clearly refers to either the instance or the class.  
-# - Conclude with "Yes" or "No".  
-
-# Example Direction:  
-# Ontology: "FORD a type of CAR"  
-# Text: "Ford manufactures vehicles and is a well-known automobile company."  
-# Reasoning:  
-# - Instance = FORD, Class = CAR.  
-# - Keywords: Ford, vehicle, automobile, car.  
-# - Text mentions "Ford" and "automobile".  
-# - Clear reference exists.  
-# Answer: Yes  
-
-# Now apply the same reasoning direction to:  
-# Ontology: "{instance} a type of {class}"  
-# Text: {text_chunk}  
-
-# Answer strictly with "Yes" or "No".
-# Final Answer:  
-# "Yes" or "No" only. 
-# """ 

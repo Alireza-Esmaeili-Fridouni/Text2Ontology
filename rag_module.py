@@ -9,12 +9,7 @@ class RAG:
     
     def text_embedding(self, text):
         return self.model_similarity.encode(text, convert_to_tensor=True)
-        
-    # def embedding_creator(self):
-    #     info, text = self.ontology.instance_extractor()
-    #     self.vec_db = [(txt, self.text_embedding(txt)) for txt in text]
-    #     return self.vec_db
-    
+
     def embedding_creator(self):
         info, text = self.ontology.instance_extractor()
         vector_db = [
