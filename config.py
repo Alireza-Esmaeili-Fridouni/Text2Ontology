@@ -59,5 +59,8 @@ Final Answer:
 """
 
 model_name = "microsoft/Phi-4-mini-instruct"
+thresholds = 0.3
+pdf_name = 'Effects of Defects on Thermal Transport.pdf'
+owl_file = "MatOnto.owl"
 
 
