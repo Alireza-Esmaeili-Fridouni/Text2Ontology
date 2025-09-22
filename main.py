@@ -4,16 +4,16 @@ from rag_implemention import RAG, Retriever
 import config
 import util
 
-extractor = PDFSentenceExtractor(pdf_name='Effects of Defects on Thermal Transport.pdf')
+extractor = PDFSentenceExtractor(pdf_name=config.pdf_name)
 sentence_list = extractor.extractor()
-rag_retriver = Retriever(onto_file="MatOnto.owl")
+rag_retriver = Retriever(onto_file=config.owl_file)
 ontology_generator = Onto_generator(model_name=config.model_name, load_type="simple_model", token="")
 tokenizer = ontology_generator.tokenizer
 
 out = []
 for sentence in sentence_list:
     sentence_similarity = rag_retriver.retrieve(query=sentence, top_k=3)
-    if sentence_similarity[0][2] < 0.2:
+    if sentence_similarity[0][2] < config.thresholds:
         continue
     else:
         context = '\n'.join(sentence_similarity[0][1])
